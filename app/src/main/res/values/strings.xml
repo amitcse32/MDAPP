@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="internetconnectionmessage">Internet connection lost \n\nPlease check your wifi or mobile network.</string>
+    <string name="feedback">Feedback!</string>
 </resources>
