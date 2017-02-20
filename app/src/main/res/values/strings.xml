@@ -5,4 +5,12 @@
     <string name="internetconnectionmessage">Internet connection lost \n\nPlease check your wifi or mobile network.</string>
     <string name="feedback">Feedback!</string>
     <string name="done">Done</string>
+    <string name="testing">Testing</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="click_here"><u>Click Here</u></string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_please_register">Don\'t have an account? Please Register</string>
+    <string name="signinnow">Signin Now</string>
 </resources>
