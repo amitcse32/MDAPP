@@ -1,4 +1,4 @@
-package com.amit.myapplication.view.activity;
+package com.amit.myapplication.view.activity.splash;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.amit.myapplication.R;
 import com.amit.myapplication.utils.customcontrols.dialogs.ApplicationDialogs;
 import com.amit.myapplication.utils.customcontrols.dialogs.connectionutils.ConnectionUtils;
+import com.amit.myapplication.view.activity.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
 import com.amit.myapplication.R;
-import com.amit.myapplication.view.activity.SplashActivity;
 
 /**
  * Created by Mobile on 2/18/17.

@@ -13,4 +13,9 @@
     <string name="login">Login</string>
     <string name="don_t_have_an_account_please_register">Don\'t have an account? Please Register</string>
     <string name="signinnow">Signin Now</string>
+    <string name="loadingPleasewait">Loading... Please wait.</string>
+    <string name="emailempty">Please enter email.</string>
+    <string name="passwordEmpty">Please enter password.</string>
+    <string name="wrongusernamepassword">Wrong email/password.</string>
+    <string name="pleaseentervalidemail">Please enter valid email.</string>
 </resources>
