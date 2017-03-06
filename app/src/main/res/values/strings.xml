@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">MilkWala</string>
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
     <string name="internetconnectionmessage">Internet connection lost \n\nPlease check your wifi or mobile network.</string>
@@ -18,4 +18,13 @@
     <string name="passwordEmpty">Please enter password.</string>
     <string name="wrongusernamepassword">Wrong email/password.</string>
     <string name="pleaseentervalidemail">Please enter valid email.</string>
+    <string name="UserName">User Name</string>
+    <string name="MobileNumber">Mobile Number</string>
+    <string name="allreadyahveaccount">Allready have account ?SignIn Here</string>
+    <string name="signUpNow">SignUp Now</string>
+    <string name="usernameempty">Please enter User Name.</string>
+    <string name="phoneEmpty">Please enter mobile number.</string>
+    <string name="registrationProcess">Registration in progress......</string>
+    <string name="thisemailidallreadyexist">This email is already exist.</string>
+    <string name="RegistarationSucessful">Registration Sucessful.</string>
 </resources>

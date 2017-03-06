@@ -1,8 +1,11 @@
-package com.amit.myapplication.modle.properties.login;
+package com.amit.myapplication.modle.properties.login.register;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Created by Mobile on 3/6/17.
+ */
 public class Result {
 
 @SerializedName("status")
@@ -10,7 +13,7 @@ public class Result {
 private Integer status;
 @SerializedName("id")
 @Expose
-private Integer id;
+private String id;
 @SerializedName("message")
 @Expose
 private String message;
@@ -23,11 +26,11 @@ public void setStatus(Integer status) {
 this.status = status;
 }
 
-public Integer getId() {
+public String getId() {
 return id;
 }
 
-public void setId(Integer id) {
+public void setId(String id) {
 this.id = id;
 }
 
@@ -40,5 +43,3 @@ this.message = message;
 }
 
 }
-
-

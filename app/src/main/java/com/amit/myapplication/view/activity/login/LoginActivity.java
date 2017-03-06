@@ -1,5 +1,6 @@
 package com.amit.myapplication.view.activity.login;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -7,7 +8,10 @@ import android.widget.Toast;
 
 import com.amit.myapplication.R;
 import com.amit.myapplication.modle.properties.login.LoginResultPrp;
+import com.amit.myapplication.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
 import com.amit.myapplication.view.activity.BaseActivity;
+import com.amit.myapplication.view.activity.home.HomeActivity;
+import com.amit.myapplication.view.activity.register.RegisterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,9 +53,29 @@ public class LoginActivity extends BaseActivity implements LoginView{
         loginPresenter.requestForgotPassword(editTextEmail.getText().toString());
     }
 
+    @OnClick(R.id.textViewRegister)
+    public void onRegisterClick()
+    {
+        startActivity(new Intent(this, RegisterActivity.class));
+    }
+
     @Override
     public void onLoginComplete(LoginResultPrp loginResult) {
-        Toast.makeText(this,loginResult.getResult().getMessage(),Toast.LENGTH_SHORT).show();
+
+        if(loginResult.getResult().getStatus()==1)
+        {
+
+            MW_SharedPref sharedPref=new MW_SharedPref();
+            sharedPref.setInt(this,sharedPref.USER_ID,loginResult.getResult().getId());
+
+            startActivity(new Intent(this, HomeActivity.class));
+            finish();
+        }
+        else
+        {
+            Toast.makeText(this,getString(R.string.wrongusernamepassword),Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 

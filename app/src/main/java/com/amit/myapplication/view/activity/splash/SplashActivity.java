@@ -7,6 +7,8 @@ import android.os.Bundle;
 import com.amit.myapplication.R;
 import com.amit.myapplication.utils.customcontrols.dialogs.ApplicationDialogs;
 import com.amit.myapplication.utils.customcontrols.dialogs.connectionutils.ConnectionUtils;
+import com.amit.myapplication.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
+import com.amit.myapplication.view.activity.home.HomeActivity;
 import com.amit.myapplication.view.activity.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -58,8 +60,19 @@ public class SplashActivity extends AppCompatActivity {
 
                 //Navigate to Login or home screen
 
-                Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
-                startActivity(intent);
+
+                MW_SharedPref sharedPref=new MW_SharedPref();
+                if(sharedPref.getInt(SplashActivity.this,sharedPref.USER_ID)>0)
+                {
+                    Intent intent=new Intent(SplashActivity.this,HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
 
             }
         },SPLASH_TIME);

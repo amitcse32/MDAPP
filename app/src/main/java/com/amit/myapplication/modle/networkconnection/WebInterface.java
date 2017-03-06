@@ -1,6 +1,7 @@
 package com.amit.myapplication.modle.networkconnection;
 
 import com.amit.myapplication.modle.properties.login.LoginResultPrp;
+import com.amit.myapplication.modle.properties.login.register.RegisterResponse;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -22,6 +23,11 @@ public interface WebInterface {
     @FormUrlEncoded
     @POST("milkwala/ws/forgetPassword.php")
     Call<ResponseBody> requestForgetPassword(@Field("email")String email);
+
+    @FormUrlEncoded
+    @POST("milkwala/ws/register.php")
+    Call<RegisterResponse> requestRegister(@Field("email")String email, @Field("password") String password, @Field("userName")String username, @Field("phone") String phone, @Field("deviceToken")String deviceToken);
+
 
 
 
