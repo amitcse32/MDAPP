@@ -11,6 +11,7 @@ import com.amit.myapplication.modle.properties.login.LoginResultPrp;
 import com.amit.myapplication.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
 import com.amit.myapplication.view.activity.BaseActivity;
 import com.amit.myapplication.view.activity.home.HomeActivity;
+import com.amit.myapplication.view.activity.profile.ProfileActivity;
 import com.amit.myapplication.view.activity.register.RegisterActivity;
 
 import butterknife.BindView;
@@ -68,7 +69,7 @@ public class LoginActivity extends BaseActivity implements LoginView{
             MW_SharedPref sharedPref=new MW_SharedPref();
             sharedPref.setInt(this,sharedPref.USER_ID,loginResult.getResult().getId());
 
-            startActivity(new Intent(this, HomeActivity.class));
+            startActivity(new Intent(this, ProfileActivity.class));
             finish();
         }
         else

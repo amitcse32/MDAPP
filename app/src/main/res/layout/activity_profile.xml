@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile"
+    android:layout_width="match_parent"
+    android:background="@drawable/splash_bg"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/splash_logo"
+        android:layout_height="wrap_content" />
+
+
+    <RelativeLayout
+        android:paddingBottom="10dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:id="@+id/layoutContainer"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:inputType="textPersonName"
+            android:id="@+id/editTextAddress"
+            android:gravity="center"
+
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/selector_edittext"
+            android:hint="@string/address"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/editTextAddress"
+             android:id="@+id/textViewCity"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/selector_edittext"
+            android:hint="@string/city"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/textViewCity"
+             android:id="@+id/textViewState"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/selector_edittext"
+            android:hint="@string/state"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:inputType="number"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/textViewState"
+            android:id="@+id/editTextPinCode"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/selector_edittext"
+            android:hint="@string/pincode"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:inputType="text"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/editTextPinCode"
+            android:id="@+id/editTextCountry"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/selector_edittext"
+            android:hint="@string/SelectCountry"
+            android:layout_height="wrap_content" />
+
+
+
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/editTextCountry"
+            android:id="@+id/buttonSignUp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/selector_button"
+            android:text="@string/updateInfo"
+            android:textStyle="bold"
+            android:layout_height="wrap_content" />
+
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

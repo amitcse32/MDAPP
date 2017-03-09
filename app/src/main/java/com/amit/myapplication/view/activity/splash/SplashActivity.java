@@ -10,6 +10,7 @@ import com.amit.myapplication.utils.customcontrols.dialogs.connectionutils.Conne
 import com.amit.myapplication.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
 import com.amit.myapplication.view.activity.home.HomeActivity;
 import com.amit.myapplication.view.activity.login.LoginActivity;
+import com.amit.myapplication.view.activity.profile.ProfileActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -64,7 +65,7 @@ public class SplashActivity extends AppCompatActivity {
                 MW_SharedPref sharedPref=new MW_SharedPref();
                 if(sharedPref.getInt(SplashActivity.this,sharedPref.USER_ID)>0)
                 {
-                    Intent intent=new Intent(SplashActivity.this,HomeActivity.class);
+                    Intent intent=new Intent(SplashActivity.this,ProfileActivity.class);
                     startActivity(intent);
                     finish();
                 }

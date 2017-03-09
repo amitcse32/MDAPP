@@ -27,4 +27,32 @@
     <string name="registrationProcess">Registration in progress......</string>
     <string name="thisemailidallreadyexist">This email is already exist.</string>
     <string name="RegistarationSucessful">Registration Sucessful.</string>
+    <string name="updateInfo">Update Info</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="pincode">Pin Code</string>
+    <string name="SelectCountry">Select Country</string>
+
+
+
+
+
+    <string-array name="cities">
+        <item> Chandigarh </item>
+        <item> Mohali </item>
+        <item> Panchkula</item>
+        <item> Ambala</item>
+        <item> Ropar</item>
+    </string-array>
+
+
+    <string-array name="states">
+        <item>Punjab</item>
+        <item>Haryana</item>
+    </string-array>
+
+
+
+
 </resources>
