@@ -33,9 +33,8 @@
     <string name="state">State</string>
     <string name="pincode">Pin Code</string>
     <string name="SelectCountry">Select Country</string>
-
-
-
+    <string name="pleaseenablecameraPermission">Please enable camera permission.</string>
+    <string name="pleaseenableReadExternalStoragePermission">Please enable read extrnal storage permission.</string>
 
 
     <string-array name="cities">
@@ -53,6 +52,21 @@
     </string-array>
 
 
+    <string-array name="imageSelectOptions">
+        <item>Camera</item>
+        <item>Gallery</item>
+    </string-array>
 
+    <string name="empty_directory">Empty Directory</string>
+    <string name="storage_removed">Storage was removed or unmounted.</string>
+    <string name="choose_file">Select a file</string>
+    <string name="error_selecting_file">Error selecting File</string>
+    <string name="internal_storage">Internal storage</string>
+    <string name="phone">Phone</string>
+    <string name="loadingprofile">Loading profile..</string>
+    <string name="somethingwentwrongTryAgain">Something went wrong, Please try again.</string>
+    <string name="unabletoreadyourprofile">Unable to read your profile</string>
+    <string name="profileupdated">Profile Updated.</string>
+    <string name="unbaletoupdateyourprofile">Unable to update your profile</string>
 
 </resources>

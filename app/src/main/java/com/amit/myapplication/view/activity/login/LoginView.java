@@ -8,12 +8,9 @@ import com.amit.myapplication.modle.properties.login.LoginResultPrp;
 
 public interface LoginView {
 
-    void onLoginComplete(LoginResultPrp loginResult);
-
+    void onLoginSuccess();
     void startProgress();
     void stopProgress();
-
     void showFeedbackMessage(String message);
 
-    void onForgetPasswordComplete();
-}
+ }

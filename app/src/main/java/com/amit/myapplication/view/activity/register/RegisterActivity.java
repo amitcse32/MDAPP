@@ -6,8 +6,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.amit.myapplication.R;
-import com.amit.myapplication.modle.properties.login.register.RegisterBody;
-import com.amit.myapplication.modle.properties.login.register.RegisterResponse;
+import com.amit.myapplication.modle.properties.register.RegisterBody;
+import com.amit.myapplication.modle.properties.register.RegisterResponse;
 import com.amit.myapplication.view.activity.BaseActivity;
 
 import butterknife.BindView;
@@ -55,9 +55,8 @@ public class RegisterActivity extends BaseActivity implements RegisterView{
     }
 
     @Override
-    public void onRegistrationComplete(RegisterResponse response) {
-        Toast.makeText(this,getString(R.string.RegistarationSucessful),Toast.LENGTH_SHORT).show();
-        this.finish();
+    public void onRegistrationComplete() {
+         this.finish();
     }
 
     @Override

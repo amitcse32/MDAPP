@@ -3,11 +3,12 @@ package com.amit.myapplication.view.activity.register;
 import android.app.Activity;
 
 import com.amit.myapplication.R;
-import com.amit.myapplication.modle.networkconnection.IBaseUrl;
-import com.amit.myapplication.modle.networkconnection.WebInterface;
-import com.amit.myapplication.modle.properties.login.LoginResultPrp;
-import com.amit.myapplication.modle.properties.login.register.RegisterBody;
-import com.amit.myapplication.modle.properties.login.register.RegisterResponse;
+import com.amit.myapplication.web.connection.IBaseUrl;
+import com.amit.myapplication.web.connection.WebInterface;
+import com.amit.myapplication.modle.properties.register.RegisterBody;
+import com.amit.myapplication.modle.properties.register.RegisterResponse;
+import com.amit.myapplication.web.connection.WebRequestHandler;
+import com.amit.myapplication.web.handler.RegistrationHandler;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Mobile on 3/6/17.
  */
 
-public class RegisterPrester implements IRegisterPresenter,IBaseUrl {
+public class RegisterPrester implements IRegisterPresenter,RegistrationHandler {
 
     Activity activity;
     RegisterView registerView;
@@ -69,30 +70,36 @@ public class RegisterPrester implements IRegisterPresenter,IBaseUrl {
     private void makeRegisterRequest(final RegisterBody registerBody)
     {
         registerView.startProgress();
-        Retrofit retrofit=new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
-        final Call<RegisterResponse> result=retrofit.create(WebInterface.class).requestRegister(registerBody.getEmail(),registerBody.getPassword(),registerBody.getUserName(),registerBody.getMobileNumber(),registerBody.getDeviceToken());
-        result.enqueue(new Callback<RegisterResponse>() {
-            @Override
-            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-                registerView.stopProgress();
+        WebRequestHandler webRequestHandler=new WebRequestHandler();
+        webRequestHandler.requestRegister(registerBody,this);
 
-
-                if(response.body().getResult().getStatus()>0) {
-                    registerView.onRegistrationComplete(response.body());
-                }
-                else if(response.body().getResult().getStatus()==-2)
-                {
-                    registerView.showFeedbackMessage(activity.getString(R.string.thisemailidallreadyexist));
-                }
-            }
-
-            @Override
-            public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                registerView.stopProgress();
-                registerView.showFeedbackMessage(activity.getString(R.string.wrongusernamepassword));
-            }
-        });
     }
 
 
+    @Override
+    public void onRegistrationComplete(RegisterResponse registerResponse) {
+
+        if(registerResponse!=null)
+        {
+            if(registerResponse.getResult().getStatus()==1)
+            {
+                registerView.onRegistrationComplete();
+            }
+            else
+            {
+                registerView.showFeedbackMessage(activity.getString(R.string.thisemailidallreadyexist));
+            }
+        }
+        else
+        {
+            registerView.showFeedbackMessage(activity.getString(R.string.somethingwentwrongTryAgain));
+
+        }
+
+    }
+
+    @Override
+    public void onRegistrationFail(String message) {
+
+    }
 }

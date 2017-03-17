@@ -1,36 +1,56 @@
 package com.amit.myapplication.view.activity.profile;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.amit.myapplication.R;
-import com.amit.myapplication.modle.properties.login.profile.ProfileResult;
+import com.amit.myapplication.web.connection.IBaseUrl;
+import com.amit.myapplication.modle.properties.profile.ProfileResult;
+import com.amit.myapplication.modle.properties.profileupdate.ProfileBody;
+import com.amit.myapplication.modle.properties.profileupdate.ProfileUpdateResult;
+import com.amit.myapplication.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
 import com.amit.myapplication.view.activity.BaseActivity;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ProfileActivity extends BaseActivity implements ProfileView {
-
-
-
-    @BindView(R.id.textViewCity)
-    TextView textViewCity;
-
-    @BindView(R.id.textViewState)
-    TextView textViewState;
+public class ProfileActivity extends BaseActivity implements ProfileView,IBaseUrl {
 
 
 
 
-    //Data Variables
-    String[] ARRAY_CITY;
-    String[] ARRAY_STATES;
+    @BindView(R.id.editTextAddress)
+    EditText editTextAddress;
+
+    @BindView(R.id.editTextUserName)
+    EditText editTextUserName;
+
+    @BindView(R.id.editTextPhone)
+    EditText editTextPhone;
+
+    @BindView(R.id.imageViewUserImage)
+    CircleImageView imageViewUserImage;
+
+
+    Uri SELECTED_PIC_URI;
+
+
+
+
+
+
+
 
 
     IProfilePresenter profilePresenter;
@@ -41,21 +61,66 @@ public class ProfileActivity extends BaseActivity implements ProfileView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
-
         profilePresenter=new ProfilePresenter(this,this);
-        profilePresenter.loadCities();
-        profilePresenter.loadStates();
+
+
+
+
+
+        MW_SharedPref sharedPref=new MW_SharedPref();
+
+        profilePresenter.requestUserProfile(sharedPref.getInt(this,sharedPref.USER_ID));
 
 
     }
+
+
+
+
+
+
+    @OnClick(R.id.buttonUpdateProfile)
+    public void updateProfileClick()
+    {
+        ProfileBody profileBody=new ProfileBody();
+        profileBody.setAddress(editTextAddress.getText().toString());
+        profileBody.setQrCode("fasdfasdfasdfasdfasdf");
+
+        MW_SharedPref sharedPref=new MW_SharedPref();
+        profileBody.setUserId(sharedPref.getInt(this,sharedPref.USER_ID));
+        profileBody.setUserName(editTextUserName.getText().toString());
+        profileBody.setPhone(editTextPhone.getText().toString());
+
+        profilePresenter.updateProfile(profileBody,SELECTED_PIC_URI);
+
+
+    }
+
+
 
     @Override
     public void loadProfile(ProfileResult profileResult) {
 
+        if(profileResult!=null)
+        {
+            editTextAddress.setText(profileResult.getResult().getData().getAddress());
+            editTextPhone.setText(profileResult.getResult().getData().getPhone());
+            editTextUserName.setText(profileResult.getResult().getData().getUserName());
+
+            Picasso.with(this).load(USER_IMAGE_BASE_URL+profileResult.getResult().getData().getImage()).into(imageViewUserImage);
+        }
+        else
+        {
+            Toast.makeText(this,"Profile loading fail",Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
     @Override
-    public void updateProfileResult() {
+    public void onProfileUpdateComplete() {
+
+
 
     }
 
@@ -71,45 +136,52 @@ public class ProfileActivity extends BaseActivity implements ProfileView {
     }
 
     @Override
-    public void loadCities(String[] cities) {
-
-
-        ARRAY_CITY=cities;
-
+    public void showFeedbackMessage(String message) {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
 
     }
+
+
+    @OnClick(R.id.imageViewUserImage)
+    public void onUserImageClick()
+    {
+        selectImageOptionsDialog(this);
+    }
+
 
     @Override
-    public void loadStates(String[] states) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        ARRAY_STATES=states;
-    }
-
-
-    @OnClick(R.id.textViewCity)
-    public void onCityClick()
-    {
-        AlertDialog.Builder dialog=new AlertDialog.Builder(this);
-        dialog.setItems(ARRAY_CITY, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                textViewCity.setText(ARRAY_CITY[which]);
+        if(requestCode==BaseActivity.CAMERA_PERMISSION)
+        {
+            if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED)
+            {
+                Toast.makeText(this,getString(R.string.pleaseenablecameraPermission),Toast.LENGTH_SHORT).show();
             }
-        });
-        dialog.show();
-    }
-
-    @OnClick(R.id.textViewState)
-    public void onStateClick()
-    {
-        AlertDialog.Builder dialog=new AlertDialog.Builder(this);
-        dialog.setItems(ARRAY_STATES, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                textViewState.setText(ARRAY_STATES[which]);
+        }
+        else if(requestCode==BaseActivity.GALLERY_PERMISSION)
+        {
+            if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED)
+            {
+                Toast.makeText(this,getString(R.string.pleaseenableReadExternalStoragePermission),Toast.LENGTH_SHORT).show();
             }
-        });
-        dialog.show();
+        }
+
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if(resultCode==RESULT_OK) {
+            if (requestCode == BaseActivity.CAMERA_INTENT) {
+
+            } else if (requestCode == BaseActivity.GALLERY_INTENT) {
+                  SELECTED_PIC_URI = data.getData();
+
+                 imageViewUserImage.setImageURI(SELECTED_PIC_URI);
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

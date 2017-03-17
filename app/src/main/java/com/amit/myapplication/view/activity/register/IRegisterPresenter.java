@@ -1,6 +1,7 @@
 package com.amit.myapplication.view.activity.register;
 
-import com.amit.myapplication.modle.properties.login.register.RegisterBody;
+
+import com.amit.myapplication.modle.properties.register.RegisterBody;
 
 /**
  * Created by Mobile on 3/6/17.

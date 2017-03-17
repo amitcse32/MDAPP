@@ -3,9 +3,12 @@ package com.amit.myapplication.view.activity.login;
 import android.app.Activity;
 
 import com.amit.myapplication.R;
-import com.amit.myapplication.modle.networkconnection.IBaseUrl;
-import com.amit.myapplication.modle.networkconnection.WebInterface;
+import com.amit.myapplication.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
+import com.amit.myapplication.web.connection.IBaseUrl;
+import com.amit.myapplication.web.connection.WebInterface;
 import com.amit.myapplication.modle.properties.login.LoginResultPrp;
+import com.amit.myapplication.web.connection.WebRequestHandler;
+import com.amit.myapplication.web.handler.LoginHandler;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -18,107 +21,85 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Mobile on 3/2/17.
  */
 
-public class LoginPresenter implements ILoginPresenter ,IBaseUrl {
+public class LoginPresenter implements ILoginPresenter, LoginHandler {
 
     LoginView loginView;
     Activity activity;
-    LoginPresenter(LoginView loginView, Activity activity)
-    {
-        this.loginView=loginView;
-        this.activity=activity;
-    }
 
+    LoginPresenter(LoginView loginView, Activity activity) {
+        this.loginView = loginView;
+        this.activity = activity;
+    }
 
     @Override
     public void requestLogin(String email, String password) {
-
-
-            if(checkFieldEmpty(email,password))
-            {
-                if(isEmailValid(email))
-                {
-                    makeLoginRequest(email,password);
-                }
+        if (checkFieldEmpty(email, password)) {
+            if (isEmailValid(email)) {
+                makeLoginRequest(email, password);
             }
+        }
+    }
 
+    private boolean checkFieldEmpty(String email, String password) {
+        if (email.trim().length() == 0) {
+            loginView.showFeedbackMessage(activity.getString(R.string.emailempty));
+            return false;
+        } else if (password.trim().length() == 0) {
+            loginView.showFeedbackMessage(activity.getString(R.string.passwordEmpty));
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+    private boolean isEmailValid(String email) {
+        return true;
+    }
+
+
+    private void makeLoginRequest(String email, String password) {
+        loginView.startProgress();
+        WebRequestHandler webRequestHandler = new WebRequestHandler();
+        webRequestHandler.requestLogin(email, password, this);
+
+    }
+
+
+    @Override
+    public void loginSuccess(LoginResultPrp loginResultPrp) {
+        loginView.stopProgress();
+        if (loginResultPrp.getResult() != null) {
+            if (loginResultPrp.getResult().getStatus() == 1) {
+                //Save Value to shared preferences
+
+                MW_SharedPref sharedPref=new MW_SharedPref();
+                sharedPref.setInt(activity,sharedPref.USER_ID,loginResultPrp.getResult().getId());
+
+                loginView.onLoginSuccess();
+            } else {
+                //Show user wrong message
+                loginView.showFeedbackMessage(activity.getString(R.string.wrongusernamepassword));
+            }
+        } else {
+            //Retruend value is null so cant define anything here
+            loginView.showFeedbackMessage(activity.getString(R.string.somethingwentwrongTryAgain));
+        }
     }
 
     @Override
-    public void requestForgotPassword(String email) {
-        if(checkFieldEmpty(email,"PASSWORD"))
-        {
-            if(isEmailValid(email))
-            {
-                makeForgetPasswordRequest(email);
-            }
-        }
-    }
+    public void loginFail(String message) {
+        loginView.stopProgress();
 
-
-    private boolean checkFieldEmpty(String email,String password)
-    {
-        if(email.trim().length()==0)
+        if(message!=null)
         {
-            loginView.showFeedbackMessage(activity.getString(R.string.emailempty));
-            return false;
-        }
-        else if(password.trim().length()==0)
-        {
-            loginView.showFeedbackMessage(activity.getString(R.string.passwordEmpty));
-
-            return  false;
+            loginView.showFeedbackMessage(message);
         }
         else
         {
-            return  true;
+            loginView.showFeedbackMessage(activity.getString(R.string.somethingwentwrongTryAgain));
+
         }
-    }
 
-
-    private boolean isEmailValid(String email)
-    {
-        return  true;
-    }
-
-
-    private void makeLoginRequest(String email,String password)
-    {
-        loginView.startProgress();
-        Retrofit retrofit=new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
-        final Call<LoginResultPrp> result=retrofit.create(WebInterface.class).requestLogin(email,password);
-        result.enqueue(new Callback<LoginResultPrp>() {
-            @Override
-            public void onResponse(Call<LoginResultPrp> call, Response<LoginResultPrp> response) {
-                loginView.stopProgress();
-                loginView.onLoginComplete(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<LoginResultPrp> call, Throwable t) {
-                loginView.stopProgress();
-                loginView.showFeedbackMessage(activity.getString(R.string.wrongusernamepassword));
-            }
-        });
-    }
-
-
-    private void makeForgetPasswordRequest(String email)
-    {
-        loginView.startProgress();
-        Retrofit retrofit=new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
-        final Call<ResponseBody> result=retrofit.create(WebInterface.class).requestForgetPassword(email);
-        result.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                loginView.stopProgress();
-                loginView.onForgetPasswordComplete();
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                loginView.stopProgress();
-                loginView.showFeedbackMessage(activity.getString(R.string.pleaseentervalidemail));
-            }
-        });
     }
 }
