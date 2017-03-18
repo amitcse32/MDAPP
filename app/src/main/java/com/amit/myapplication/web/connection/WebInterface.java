@@ -1,6 +1,7 @@
 package com.amit.myapplication.web.connection;
 
 import com.amit.myapplication.modle.properties.login.LoginResultPrp;
+import com.amit.myapplication.modle.properties.products.ProductResult;
 import com.amit.myapplication.modle.properties.profile.ProfileResult;
 import com.amit.myapplication.modle.properties.profileupdate.ProfileUpdateResult;
 import com.amit.myapplication.modle.properties.register.RegisterResponse;
@@ -46,4 +47,7 @@ public interface WebInterface {
                                      @Part MultipartBody.Part image, @Part("address") RequestBody address, @Part("qrCode") RequestBody qrCode);
 
 
+
+    @GET("milkwala/ws/returnProducts.php")
+    Call<ProductResult> requestProducts();
 }

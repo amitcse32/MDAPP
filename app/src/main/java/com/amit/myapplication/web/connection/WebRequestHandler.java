@@ -2,11 +2,13 @@ package com.amit.myapplication.web.connection;
 
 import com.amit.myapplication.R;
 import com.amit.myapplication.modle.properties.login.LoginResultPrp;
+import com.amit.myapplication.modle.properties.products.ProductResult;
 import com.amit.myapplication.modle.properties.profile.ProfileResult;
 import com.amit.myapplication.modle.properties.profileupdate.ProfileBody;
 import com.amit.myapplication.modle.properties.profileupdate.ProfileUpdateResult;
 import com.amit.myapplication.modle.properties.register.RegisterBody;
 import com.amit.myapplication.modle.properties.register.RegisterResponse;
+import com.amit.myapplication.web.handler.HomeHandler;
 import com.amit.myapplication.web.handler.LoginHandler;
 import com.amit.myapplication.web.handler.ProfileReadHandler;
 import com.amit.myapplication.web.handler.ProfileUpdateHandler;
@@ -34,7 +36,7 @@ public class WebRequestHandler implements IBaseUrl {
 
 
 
-    public Retrofit initRetrofit()
+    private Retrofit initRetrofit()
     {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         return retrofit;
@@ -120,6 +122,25 @@ public class WebRequestHandler implements IBaseUrl {
                 handler.onProfileUpdateFail(t.getMessage());
             }
         });
+    }
+
+
+    public void requestProducts(final HomeHandler handler)
+    {
+
+        Call<ProductResult> webInterface=initRetrofit().create(WebInterface.class).requestProducts();
+        webInterface.enqueue(new Callback<ProductResult>() {
+            @Override
+            public void onResponse(Call<ProductResult> call, Response<ProductResult> response) {
+                handler.onProductLoadComplete(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<ProductResult> call, Throwable t) {
+                handler.onProductLoadFail(t.getMessage());
+            }
+        });
+
     }
 
 

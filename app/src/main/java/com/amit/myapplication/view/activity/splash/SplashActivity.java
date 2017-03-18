@@ -65,7 +65,7 @@ public class SplashActivity extends AppCompatActivity {
                 MW_SharedPref sharedPref=new MW_SharedPref();
                 if(sharedPref.getInt(SplashActivity.this,sharedPref.USER_ID)>0)
                 {
-                    Intent intent=new Intent(SplashActivity.this,ProfileActivity.class);
+                    Intent intent=new Intent(SplashActivity.this,HomeActivity.class);
                     startActivity(intent);
                     finish();
                 }

@@ -12,21 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/jars/classes.jar"
+        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton-butterknife-8.5.1_d3d85dabf018c6f46e2e8bed94662d2e8b757974/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mobile/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.2.0/41e67dba73c3347e4503761642c39d0e06ca1f2/retrofit-2.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="041e67dba73c3347e4503761642c39d0e06ca1f2">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.2.0_98ef5f5b145fceb16a31928b22fa02f5a5a4373f/classes.dex" />
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_11e8e1c235d029575833302dbd43dab5b6eb38a9/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -57,30 +48,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3edda4d08b454c83061f632a2c7d0bbf75279fb2">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f7b2d45c35be05c8a9f044805249d928fd24de7a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_654683826c498c722c936ae7243b137b3a13b93d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_4a615ea388f2dbd0cdc25ee9e17e606702c65769/classes.dex" />
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_8ff9856eef165438f575cf4b4ea645365a8dc4fb/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -88,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="2b54fb9c43f935f66b1451a2802b933117dbc09f">
+        sha1="eca0616956e8708bdb2c1d50f7be76f64aea5a24">
         <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6ad265faadcd83f43c9e06f5bc4d245341847c1e/classes.dex" />
     </item>
     <item
@@ -102,48 +75,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mobile/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.2.0/a09926806199499a20b2f5168779499abfa33342/converter-gson-2.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a09926806199499a20b2f5168779499abfa33342">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.2.0_9074266942c093ed03613837c0bf1aa90876468c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/Mobile/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.11.0/840897fcd7223a8143f1d9b6f69714e7be34fd50/okio-1.11.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
         <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.11.0_8b2bd6bc04b7d541b8167c47461ffc08ba268d0b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mobile/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_061bf2457909c19f5af1a1e34ddce7398af8cd8c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_aa8ad970fc8b8624a364855ae4fb99f674a550d6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_8d834490c4646e6aeba9d760dc39156e2e006549/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -192,12 +129,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mobile/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.1/constraint-layout-solver-1.0.1.jar"
+        jar="/Users/Mobile/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.1/2287494d4f5f9f3a9a2bb6980e3f32053721b315/core-3.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="1ad79631209e77b0a2730fc112b4cc0c66a95132">
-        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.1_03d14994eee102d73760bf527af54b67b6346584/classes.dex" />
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/core-3.2.1_b71e00e566d15921a217a4b5847c4e85fac9868b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -207,6 +144,105 @@
         revision="25.0.2"
         sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
         <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_b86be8299f0921e936359f9c97ac0eefa7098fcf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton-butterknife-8.5.1_d3d85dabf018c6f46e2e8bed94662d2e8b757974/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.2.0/41e67dba73c3347e4503761642c39d0e06ca1f2/retrofit-2.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="041e67dba73c3347e4503761642c39d0e06ca1f2">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.2.0_98ef5f5b145fceb16a31928b22fa02f5a5a4373f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="011c7e010a5795b6bedb2969a356844907f84bd3">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f7b2d45c35be05c8a9f044805249d928fd24de7a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_654683826c498c722c936ae7243b137b3a13b93d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_4a615ea388f2dbd0cdc25ee9e17e606702c65769/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.2.0/a09926806199499a20b2f5168779499abfa33342/converter-gson-2.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a09926806199499a20b2f5168779499abfa33342">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.2.0_9074266942c093ed03613837c0bf1aa90876468c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_aa8ad970fc8b8624a364855ae4fb99f674a550d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_061bf2457909c19f5af1a1e34ddce7398af8cd8c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_8d834490c4646e6aeba9d760dc39156e2e006549/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_4cbdd7aa64a15857565f9f56bc156c4dd21f01c6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mobile/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.1/constraint-layout-solver-1.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ad79631209e77b0a2730fc112b4cc0c66a95132">
+        <dex dex="/Users/Mobile/Desktop/Android Classes/Amit Projects/MDAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.1_03d14994eee102d73760bf527af54b67b6346584/classes.dex" />
     </item>
 
 </items>

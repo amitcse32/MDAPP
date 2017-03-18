@@ -4,10 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
-
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,17 +13,28 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoTitle">
-        <activity android:screenOrientation="portrait" android:name=".view.activity.splash.SplashActivity">
+        <activity
+            android:name=".view.activity.splash.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:screenOrientation="portrait" android:name=".view.activity.login.LoginActivity" />
-        <activity android:screenOrientation="portrait" android:name=".view.activity.register.RegisterActivity" />
-        <activity android:screenOrientation="portrait" android:name=".view.activity.home.HomeActivity" />
-        <activity android:screenOrientation="portrait" android:name=".view.activity.profile.ProfileActivity"></activity>
+        <activity
+            android:name=".view.activity.login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.register.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.profile.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.home.HomeActivity"
+            android:label=""
+            android:theme="@style/AppThemeNoTitle"></activity>
     </application>
 
 </manifest>

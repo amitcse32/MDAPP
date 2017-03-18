@@ -23,6 +23,17 @@
         android:src="@drawable/profile_selectimage"
         android:layout_height="150dp" />
 
+    <TextView
+        android:id="@+id/textViewShowQrCode"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textColor="#0355ec"
+        android:layout_below="@+id/imageViewUserImage"
+        android:layout_width="match_parent"
+        android:text="@string/showQrCode"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
     <LinearLayout
         android:orientation="vertical"
